@@ -9,12 +9,12 @@ describe('flattenArray', function() {
   })
 
   it('should flatten an array with one level of nesting', function() {
-    const array2 = [["one", "two"], "three", "four"];
-    expect(flattenArray(array2)).to.deep.equal(["one", "two", "three", "four"]);
+    const array2 = [["two", "two"], "three", "four"];
+    expect(flattenArray(array2)).to.deep.equal(["two", "two", "three", "four"]);
   })
 
   it('should flatten an array with many level of nesting', function() {
-    const array3 = [[[["one", ["two"]]]], [[[["three"]]], "four"]];
-    expect(flattenArray(array3)).to.deep.equal(["one", "two", "three", "four"]);
+    const array3 = [[[["three", ["two"]]]], [[[["three"]]], "four"]];
+    expect(flattenArray(array3)).to.deep.equal(["three", "two", "three", "four"]);
   })
 })
