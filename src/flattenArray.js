@@ -1,5 +1,5 @@
 const flattenArray = arr => {
-  return arr.flatten(Infinity)
+  return arr.flat(Infinity)
 }
 
-export default flattenArray
+module.exports =  flattenArray

@@ -1,12 +1,20 @@
-import chai from 'chai';
+const chai = require('chai');
 const expect = chai.expect;
-import flattenArray from '../src/flattenArray';
+const flattenArray = require('../src/flattenArray');
 
 describe('flattenArray', function() {
-  
-
   it('should flatten an array without nesting', function() {
-    const array1 = [1, 2, 3, 4];
-    expect(flattenArray(array1)).to.deep.equal([1, 2, 3, 4]);
+    const array1 = ["one", "two", "three", "four"];
+    expect(flattenArray(array1)).to.deep.equal(["one", "two", "three", "four"]);
+  })
+
+  it('should flatten an array with one level of nesting', function() {
+    const array2 = [["one", "two"], "three", "four"];
+    expect(flattenArray(array2)).to.deep.equal(["one", "two", "three", "four"]);
+  })
+
+  it('should flatten an array with many level of nesting', function() {
+    const array3 = [[[["one", ["two"]]]], [[[["three"]]], "four"]];
+    expect(flattenArray(array3)).to.deep.equal(["one", "two", "three", "four"]);
   })
 })
