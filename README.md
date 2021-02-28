@@ -38,7 +38,7 @@ git clone https://github.com/mattdeann/flatten-array.git
 ```
 2. Move into the repo
 ```
-cd flattenArray
+cd flatten-array
 ```
 3. Install NPM packages
 ```sh
